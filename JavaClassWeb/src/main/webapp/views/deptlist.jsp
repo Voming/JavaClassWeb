@@ -7,6 +7,9 @@
 <title>Dept List</title>
 </head>
 <body>
-
+dept list
+<br>
+${DeptData1 }
+</br>
 </body>
 </html>

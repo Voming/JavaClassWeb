@@ -3,12 +3,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-안녕하세요/n
 <meta charset="UTF-8">
-<title>제목</title>
+<title>Emp List</title>
 </head>
 <body>
-newjsp/n
 
 </body>
 </html>

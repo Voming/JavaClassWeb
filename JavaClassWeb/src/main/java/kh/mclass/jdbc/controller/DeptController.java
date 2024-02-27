@@ -15,7 +15,7 @@ import kh.mclass.jdbc.modle.vo.Dept;
 /**
  * Servlet implementation class DeptController
  */
-@WebServlet("/DeptController")   //서버 경로 변경가능
+@WebServlet("/DeptList")   //서버 경로 변경가능
 public class DeptController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -32,8 +32,7 @@ public class DeptController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//Controller 역할
-		//1. view 을 선택
-		request.getRequestDispatcher("/NewFile.jsp").forward(request, response);
+		
 		//request.getRequestDispatcher("/bfile/b.jsp").forward(request, response); 두개를 같이 쓸수 없음(둘중하나만 선택해서 열림)
 //		 view 역할을 JSP 파일에서 함
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
@@ -45,7 +44,12 @@ public class DeptController extends HttpServlet {
 		DeptService service = new DeptService();
 		List<Dept> result = service.selectList();
 		System.out.println(result);
-		//request.getRequestDispatcher("/DeptList.jsp").forward(request, response);
+		
+		//3. view에 데이터 전달
+		request.setAttribute("DeptData1", result);  ///views/deptlist.jsp에 전달 됨
+		
+		//1. view 을 선택
+		request.getRequestDispatcher("/views/deptlist.jsp").forward(request, response);
 	}
 
 	/**
