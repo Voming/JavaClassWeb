@@ -47,7 +47,7 @@ public class DeptController extends HttpServlet {
 		
 		//3. view에 데이터 전달
 		request.setAttribute("DeptData1", result);  ///views/deptlist.jsp에 전달 됨
-		
+		request.setAttribute("DeptData2", "서버에서 값 가져와서 출력중...");
 		//1. view 을 선택
 		request.getRequestDispatcher("/views/deptlist.jsp").forward(request, response);
 	}

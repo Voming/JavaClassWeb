@@ -9,7 +9,8 @@
 <body>
 dept list
 <br>
-${DeptData1 }
-</br>
+${DeptData1}
+<br>
+${DeptData2}
 </body>
 </html>
