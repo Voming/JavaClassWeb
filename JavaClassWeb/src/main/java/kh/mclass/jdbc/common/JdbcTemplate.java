@@ -16,7 +16,7 @@ public class JdbcTemplate { // 중복되는 connection, close 함
 		Connection conn = null;
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			conn = DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:XE", "scott", "TIGER");
+			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "scott", "TIGER");
 
 			if (conn != null) {
 				System.out.println("연결 완료");
