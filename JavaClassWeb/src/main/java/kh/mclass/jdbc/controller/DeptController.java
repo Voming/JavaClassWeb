@@ -31,6 +31,12 @@ public class DeptController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//한글 깨짐 해결방법  -> web.xml에 써도됨
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
+		
+		
 		//Controller 역할
 		
 		//request.getRequestDispatcher("/bfile/b.jsp").forward(request, response); 두개를 같이 쓸수 없음(둘중하나만 선택해서 열림)
@@ -48,6 +54,7 @@ public class DeptController extends HttpServlet {
 		//3. view에 데이터 전달
 		request.setAttribute("DeptData1", result);  ///views/deptlist.jsp에 전달 됨
 		request.setAttribute("DeptData2", "서버에서 값 가져와서 출력중...");
+		request.setAttribute("DeptData3", 1234);
 		//1. view 을 선택
 		request.getRequestDispatcher("/views/deptlist.jsp").forward(request, response);
 	}
