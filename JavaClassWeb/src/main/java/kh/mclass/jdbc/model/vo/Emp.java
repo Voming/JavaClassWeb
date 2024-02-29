@@ -1,4 +1,4 @@
-package kh.mclass.jdbc.modle.vo;
+package kh.mclass.jdbc.model.vo;
 
 import java.io.Serializable;
 import java.sql.Date;

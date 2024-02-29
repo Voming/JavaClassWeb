@@ -12,7 +12,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import kh.mclass.jdbc.modle.vo.Emp;
+import kh.mclass.jdbc.model.vo.Emp;
 
 public class EmpDao {
 	public List<Emp> selectList(Connection conn) {

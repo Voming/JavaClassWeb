@@ -1,4 +1,4 @@
-package kh.mclass.jdbc.modle.vo;
+package kh.mclass.jdbc.model.vo;
 
 public class Dept {
 //	이름                                      널?      유형

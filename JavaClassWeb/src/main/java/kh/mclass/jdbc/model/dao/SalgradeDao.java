@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import kh.mclass.jdbc.modle.vo.Salgrade;
+import kh.mclass.jdbc.model.vo.Salgrade;
 
 public class SalgradeDao {
 //	private int grade;

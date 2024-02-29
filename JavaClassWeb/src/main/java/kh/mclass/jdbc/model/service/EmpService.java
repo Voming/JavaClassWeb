@@ -1,4 +1,4 @@
-package kh.mclass.jdbc.modle.service;
+package kh.mclass.jdbc.model.service;
 
 import static kh.mclass.jdbc.common.JdbcTemplate.autoCommit;
 import static kh.mclass.jdbc.common.JdbcTemplate.close;
@@ -9,28 +9,24 @@ import static kh.mclass.jdbc.common.JdbcTemplate.rollback;
 import java.sql.Connection;
 import java.util.List;
 
-import kh.mclass.jdbc.model.dao.DeptDao;
-import kh.mclass.jdbc.modle.vo.Dept;
+import kh.mclass.jdbc.model.dao.EmpDao;
+import kh.mclass.jdbc.model.vo.Emp;
 
-public class DeptService {
-	// connection 객체/close
-	// conn -commit/ rollback
+public class EmpService {
+	EmpDao dao = new EmpDao();
 
-	private DeptDao dao = new DeptDao();
-
-	public List<Dept> selectList() {
-		List<Dept> result = null;
+	public List<Emp> selectList() {
 		Connection conn = getConnection();
-		result = dao.selectList(conn);
+		List<Emp> result = dao.selectList(conn);
 		close(conn);
 		return result;
 	}
 
-	public int insert(Dept dept) {
-		int result = -1;
+	public int insert(Emp emp) {
 		Connection conn = getConnection();
+		int result = -1;
 		autoCommit(conn, false);
-		result = dao.insert(conn, dept);
+		result = dao.insertEmp(conn, emp);
 		if (result > 0) {
 			commit(conn);
 		} else {
@@ -39,11 +35,11 @@ public class DeptService {
 		return result;
 	}
 
-	public int delete(String dname) {
-		int result = -1;
+	public int delete(String ename) {
 		Connection conn = getConnection();
+		int result = -1;
 		autoCommit(conn, false);
-		result = dao.delete(conn, dname);
+		result = dao.deletEmp(conn, ename);
 		if (result > 0) {
 			commit(conn);
 		} else {
@@ -51,4 +47,5 @@ public class DeptService {
 		}
 		return result;
 	}
+
 }

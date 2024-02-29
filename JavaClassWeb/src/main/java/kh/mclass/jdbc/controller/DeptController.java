@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import kh.mclass.jdbc.modle.service.DeptService;
-import kh.mclass.jdbc.modle.vo.Dept;
+import kh.mclass.jdbc.model.service.DeptService;
+import kh.mclass.jdbc.model.vo.Dept;
 
 /**
  * Servlet implementation class DeptController

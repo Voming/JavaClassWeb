@@ -1,4 +1,4 @@
-package kh.mclass.jdbc.modle.service;
+package kh.mclass.jdbc.model.service;
 
 import static kh.mclass.jdbc.common.JdbcTemplate.autoCommit;
 import static kh.mclass.jdbc.common.JdbcTemplate.close;
@@ -10,7 +10,7 @@ import java.sql.Connection;
 import java.util.List;
 
 import kh.mclass.jdbc.model.dao.SalgradeDao;
-import kh.mclass.jdbc.modle.vo.Salgrade;
+import kh.mclass.jdbc.model.vo.Salgrade;
 
 public class SalgradeService {
 	SalgradeDao dao = new SalgradeDao();

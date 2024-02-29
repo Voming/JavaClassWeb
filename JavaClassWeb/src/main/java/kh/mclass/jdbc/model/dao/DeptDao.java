@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import kh.mclass.jdbc.modle.vo.Dept;
+import kh.mclass.jdbc.model.vo.Dept;
 
 public class DeptDao {
 //	private int deptno;
@@ -97,14 +97,14 @@ public class DeptDao {
 		return result;
 	}
 
-	public int delete(Connection conn, String dname) {
-		String sql = "delete from dept where dname = ?";
+	public int delete(Connection conn, int deptno) {
+		String sql = "delete from dept where deptno = ?";
 		PreparedStatement pstmt = null;
 		int result = 0;
 
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, dname);
+			pstmt.setInt(1, deptno);
 
 			result = pstmt.executeUpdate();
 		} catch (SQLException e) {
