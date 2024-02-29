@@ -9,9 +9,6 @@
 <title>Dept List</title>
 </head>
 <body>
-	<br> ${deptlist}
-	<br> =======
-	<%=request.getAttribute("deptlist")%>
 	<br> =======
 	<br>
 	<%

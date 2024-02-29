@@ -20,11 +20,11 @@ public class JdbcTemplate { // 중복되는 connection, close 함
 		try {
 			// JdbcTemplate 위치의 리소스를 가져와   /*URL 형태로 리턴해줌*/
 			String currnetPath = JdbcTemplate.class.getResource("./").getPath();/*String 형태로 변환*/
-			System.out.println(currnetPath);
-			///C:/Workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/JavaClassWeb/WEB-INF/classes/kh/mclass/jdbc/common/
+			//System.out.println(currnetPath);
+			//C:/Workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/JavaClassWeb/WEB-INF/classes/kh/mclass/jdbc/common/
 			//.metadata아래에 위치함
 			prop.load(new FileReader(currnetPath+"driver.properties"));
-			System.out.println(prop.getProperty("jdbc.url"));
+			//System.out.println(prop.getProperty("jdbc.url"));
 			
 			Class.forName(prop.getProperty("jdbc.driver"));
 			conn = DriverManager.getConnection(prop.getProperty("jdbc.url"), 

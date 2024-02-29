@@ -1,7 +1,6 @@
 package kh.mclass.jdbc.controller;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,7 +14,7 @@ import kh.mclass.jdbc.model.vo.Dept;
 /**
  * Servlet implementation class DeptInsertController
  */
-@WebServlet("/DeptInsertController")
+@WebServlet("/dept/insert")
 public class DeptInsertController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -33,6 +32,8 @@ public class DeptInsertController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
+		
 		// ?deptno=60&dname=KIM&loc=SEOUL
 		String deptnoS = request.getParameter("deptno"); // 리턴은 항상 String으로
 		String dname = request.getParameter("dname");
@@ -49,11 +50,13 @@ public class DeptInsertController extends HttpServlet {
 		
 		int result = service.insert(newD);
 		
+		
 		if (result > 0) {
-			List<Dept> volist = service.selectList();
-			request.setAttribute("DeptData1", volist);
+//			List<Dept> volist = service.selectList();
+//			request.setAttribute("DeptData1", volist);
+//			request.getRequestDispatcher("/WEB-INF/lib/views/deptlist.jsp").forward(request, response);
 			
-			request.getRequestDispatcher("/WEB-INF/lib/views/deptlist.jsp").forward(request, response);
+			response.sendRedirect(request.getContextPath() + "/dept/list");
 		} else {
 			request.setAttribute("msg", "부서를 추가하지 못했습니다.");
 			request.getRequestDispatcher("/WEB-INF/lib/views/errorPage.jsp").forward(request, response);
