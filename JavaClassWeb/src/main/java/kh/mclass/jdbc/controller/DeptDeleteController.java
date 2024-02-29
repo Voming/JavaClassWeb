@@ -48,10 +48,10 @@ public class DeptDeleteController extends HttpServlet {
 		if(result > 0) {
 			List<Dept> volist = service.selectList();
 			request.setAttribute("DeptData1", volist);
-			request.getRequestDispatcher("/views/deptlist.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/lib/views/deptlist.jsp").forward(request, response);
 		}else {
 			request.setAttribute("msg", "삭제 중 오류가 발생했습니다.");
-			request.getRequestDispatcher("/views/errorPage.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/lib/views/errorPage.jsp").forward(request, response);
 		}
 	}
 

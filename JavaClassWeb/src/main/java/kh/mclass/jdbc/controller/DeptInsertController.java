@@ -53,10 +53,10 @@ public class DeptInsertController extends HttpServlet {
 			List<Dept> volist = service.selectList();
 			request.setAttribute("DeptData1", volist);
 			
-			request.getRequestDispatcher("/views/deptlist.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/lib/views/deptlist.jsp").forward(request, response);
 		} else {
 			request.setAttribute("msg", "부서를 추가하지 못했습니다.");
-			request.getRequestDispatcher("/views/errorPage.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/lib/views/errorPage.jsp").forward(request, response);
 		}
 	}
 
