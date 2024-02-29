@@ -18,8 +18,8 @@ public class JdbcTemplate { // 중복되는 connection, close 함
 		Connection conn = null;
 		Properties prop = new Properties();
 		try {
-			// JdbcTemplate 위치의 리소스를 가져와               /*URL 형태로 리턴해줌*/
-			String currnetPath = JdbcTemplate.class.getResource("").getPath();/*String 형태로 변환*/
+			// JdbcTemplate 위치의 리소스를 가져와   /*URL 형태로 리턴해줌*/
+			String currnetPath = JdbcTemplate.class.getResource("./").getPath();/*String 형태로 변환*/
 			System.out.println(currnetPath);
 			///C:/Workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/JavaClassWeb/WEB-INF/classes/kh/mclass/jdbc/common/
 			//.metadata아래에 위치함

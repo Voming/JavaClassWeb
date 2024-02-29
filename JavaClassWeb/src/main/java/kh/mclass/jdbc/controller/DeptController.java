@@ -27,9 +27,7 @@ public class DeptController extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+    //자료형 기억하기
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//한글 깨짐 해결방법  -> web.xml에 써도됨
 		request.setCharacterEncoding("UTF-8");
@@ -37,7 +35,7 @@ public class DeptController extends HttpServlet {
 		response.setContentType("text/html; charset=UTF-8");
 		
 		
-		//Controller 역할
+		//Controller 역할(순서는 아님)
 		
 		//request.getRequestDispatcher("/bfile/b.jsp").forward(request, response); 두개를 같이 쓸수 없음(둘중하나만 선택해서 열림)
 //		 view 역할을 JSP 파일에서 함
@@ -51,12 +49,21 @@ public class DeptController extends HttpServlet {
 		List<Dept> result = service.selectList();
 		System.out.println(result);
 		
-		//3. view에 데이터 전달
-		request.setAttribute("DeptData1", result);  ///views/deptlist.jsp에 전달 됨
-		request.setAttribute("DeptData2", "서버에서 값 가져와서 출력중...");
-		request.setAttribute("DeptData3", 1234);
-		//1. view 을 선택
-		request.getRequestDispatcher("/views/deptlist.jsp").forward(request, response);
+		
+		if(result == null) {  //null 오류 제어
+			request.setAttribute("msg", "부서 조회를 할 수 없습니다. 잠시 후 시스템 확인 후 다시 해주세요."); 
+			request.getRequestDispatcher("/views/errorPage.jsp").forward(request, response);
+		}else {
+
+			//3. view에 데이터 전달
+			request.setAttribute("DeptData1", result);  ///views/deptlist.jsp에 전달 됨
+			request.setAttribute("DeptData2", "서버에서 값 가져와서 출력중...");
+			request.setAttribute("DeptData3", 1234);
+			//1. view 을 선택
+			//맨 마지막 줄에 들어와서 값을 보냄
+			request.getRequestDispatcher("/views/deptlist.jsp").forward(request, response);
+		}
+		
 	}
 
 	/**

@@ -36,6 +36,8 @@ public class DeptDao {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		}  catch (Exception e) {   //NulllPotintEceiption많이 발생할 수 있음
+			e.printStackTrace();
 		} finally {
 			close(rs);
 			close(pstmt);
