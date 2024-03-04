@@ -30,7 +30,7 @@ public class DeptController extends HttpServlet {
 	// 자료형 기억하기
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// request 메소드 확인
+//		// request 메소드 확인
 //		System.out.println("=====request.getParameterNames() - 예) 카테고리별 검색(직업, 연봉, 지역)========");
 //		Enumeration<String> enumNames = request.getParameterNames();
 //		//System.out.println(enumNames);

@@ -4,9 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Emp List</title>
+<title>DEPT LISt</title>
 </head>
 <body>
+<h1>dept 리스트를 출력합니다.</h1>
 
 </body>
 </html>

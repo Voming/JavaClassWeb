@@ -56,11 +56,13 @@ public class DeptInsertController extends HttpServlet {
 //			request.setAttribute("DeptData1", volist);
 //			request.getRequestDispatcher("/WEB-INF/lib/views/deptlist.jsp").forward(request, response);
 			
-			response.sendRedirect(request.getContextPath() + "/dept/list");
+			response.sendRedirect(  //getContextPath를 포함해서 적어야함
+					request.getContextPath()/*하나의 웹서버에 여러개의 프로젝트를 사용할 수 있기 때문 내프로젝트 가르키도록*/ 
+					+ "/dept/list");  //Controller servlet 기준
 		} else {
 			request.setAttribute("msg", "부서를 추가하지 못했습니다.");
-			request.getRequestDispatcher("/WEB-INF/lib/views/errorPage.jsp").forward(request, response);
-		}
+			request.getRequestDispatcher("/WEB-INF/lib/views/errorPage.jsp"/*절대위치 제한없이 다양한 URL사용가능*/).forward(request, response);
+		}    //webapp이 루트위치
 	}
 
 	/**
