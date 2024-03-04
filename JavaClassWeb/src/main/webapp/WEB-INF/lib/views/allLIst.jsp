@@ -48,7 +48,7 @@
 	<%
 	}
 	%>
-	<br> =================
+	<br> =================....
 	<h3>salgrade list</h3>
 	<%
 	List<Salgrade> sallist = (List<Salgrade>) request.getAttribute("sallist"); //리턴 타입이 Object라면 다운캐스팅을 해준다
