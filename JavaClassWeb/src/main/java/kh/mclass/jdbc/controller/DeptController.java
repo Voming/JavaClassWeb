@@ -1,7 +1,11 @@
 package kh.mclass.jdbc.controller;
 
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.Enumeration;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -31,30 +35,30 @@ public class DeptController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// request 메소드 확인
-//		System.out.println("=====request.getParameterNames() - 예) 카테고리별 검색(직업, 연봉, 지역)========");
-//		Enumeration<String> enumNames = request.getParameterNames();
-//		//System.out.println(enumNames);
-//		while (enumNames.hasMoreElements()) {
-//			// System.out.println(enumNames.nextElement()); //결과 -> 넘겨 받은 이름이 무엇인지 알 수 있음
-//			String name = enumNames.nextElement();
-//			System.out.println(request.getParameter(name));
-//
-//		}
-//		System.out.println("======request.getParameterValues() +  Arrays.asList()와 많이 사용- 선호 장르 선택, 재료선택========");
-//		// ?genre=a1&genre=b1&genre=c1
-//		String[] genreArr = request.getParameterValues("genre");
-//		List<String> genreList = Arrays.asList(genreArr);
-//		System.out.println(genreList);
-//
-//		System.out.println("=========getParameterMap()==========");
-//		Map<String, String[]> paraMap = request.getParameterMap();
-//		Set<String> keyset = paraMap.keySet();
-//		for(String key : keyset) {
-//			String[] valueArr = paraMap.get(key);
-//			List<String> valueList = Arrays.asList(valueArr);
-//			System.out.println(valueList);
-//		}
-//		System.out.println("===================");
+		System.out.println("=====request.getParameterNames() - 예) 카테고리별 검색(직업, 연봉, 지역)========");
+		Enumeration<String> enumNames = request.getParameterNames();
+		//System.out.println(enumNames);
+		while (enumNames.hasMoreElements()) {
+			// System.out.println(enumNames.nextElement()); //결과 -> 넘겨 받은 이름이 무엇인지 알 수 있음
+			String name = enumNames.nextElement();
+			System.out.println(request.getParameter(name));
+
+		}
+		System.out.println("======request.getParameterValues() +  Arrays.asList()와 많이 사용- 선호 장르 선택, 재료선택========");
+		// ?genre=a1&genre=b1&genre=c1
+		String[] genreArr = request.getParameterValues("genre");
+		List<String> genreList = Arrays.asList(genreArr);
+		System.out.println(genreList);
+
+		System.out.println("=========getParameterMap()==========");
+		Map<String, String[]> paraMap = request.getParameterMap();
+		Set<String> keyset = paraMap.keySet();
+		for(String key : keyset) {
+			String[] valueArr = paraMap.get(key);
+			List<String> valueList = Arrays.asList(valueArr);
+			System.out.println(valueList);
+		}
+		System.out.println("===================");
 		
 		
 		// 한글 깨짐 해결방법 -> web.xml에 써도됨
