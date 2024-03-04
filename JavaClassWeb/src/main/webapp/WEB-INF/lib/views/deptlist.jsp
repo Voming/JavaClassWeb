@@ -15,7 +15,7 @@ int sum(int a, int b){
 <title>Dept List</title>
 </head>
 <body>
-	<br> =======
+	<br> ==========
 	<br>
 	<%
 	List<Dept> volist = (List<Dept>) request.getAttribute("deptlist"); //리턴 타입이 Object라면 다운캐스팅을 해준다
