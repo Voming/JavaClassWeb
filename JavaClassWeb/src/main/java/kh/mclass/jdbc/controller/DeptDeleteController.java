@@ -49,7 +49,7 @@ public class DeptDeleteController extends HttpServlet {
 //			request.setAttribute("DeptData1", volist);
 //			request.getRequestDispatcher("/WEB-INF/lib/views/deptlist.jsp").forward(request, response);
 			
-			//4. URL페이지 이동
+			//4. URL페이지 이동   //projectfile위치
 			response.sendRedirect(request.getContextPath() + "/dept/list");   // listURL로 이동해라, 
 			//jsp를 보여주는 게 아니라 해당 controller의 doGet이 호출됨(유지보수 좋음)
 		}else {
@@ -57,7 +57,7 @@ public class DeptDeleteController extends HttpServlet {
 			
 			request.setAttribute("msg", "삭제 중 오류가 발생했습니다.");
 			request.getRequestDispatcher("/WEB-INF/lib/views/errorPage.jsp").forward(request, response);
-		}
+		}   //webapp 위치
 	}
 
 	/**

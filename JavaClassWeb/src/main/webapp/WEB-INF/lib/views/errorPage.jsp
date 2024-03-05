@@ -31,6 +31,11 @@ session.setAttribute("loginId", "abc");
 
 String psvalue = (String) pageContext.getAttribute("pageScope");
 %>
+jsp 제공 내장 객체의 scope를 분리하여 말하시오
+예시) setAttirbute - getAttirbute
+page(pageContext) - request(response 전까지 유지)request.getRequestDispachet("aaa.jsp");
+- session(브라우저 창 닫기 전까지, removeAttribute())
+- response.sendRedirect(url);과 함께사용됨, 로그인(로그아웃) 정보 - application
 
 	<c:choose>
 		<%--
@@ -39,6 +44,7 @@ String psvalue = (String) pageContext.getAttribute("pageScope");
 		<c:when test=""></c:when>
 		 --%>
 	</c:choose>
-	<h1>${msg}</h1>
+	<h1>${msg}  <%-- page context getAttirbute("msg")
+	-> request -> 범위 넓혀가면서 msg 찾음 --%></h1>
 </body>
 </html>
