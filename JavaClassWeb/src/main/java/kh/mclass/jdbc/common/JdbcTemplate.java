@@ -18,23 +18,14 @@ public class JdbcTemplate { // 중복되는 connection, close 함
 		Connection conn = null;
 		Properties prop = new Properties();
 		try {
-			// JdbcTemplate 위치의 리소스를 가져와   /*URL 형태로 리턴해줌*/
-			String currnetPath = JdbcTemplate.class.getResource("./").getPath();/*String 형태로 변환*/
-			//System.out.println(currnetPath);
-			//C:/Workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/JavaClassWeb/WEB-INF/classes/kh/mclass/jdbc/common/
-			//.metadata아래에 위치함
-			prop.load(new FileReader(currnetPath+"driver.properties"));
-			//System.out.println(prop.getProperty("jdbc.url"));
-			
-			Class.forName(prop.getProperty("jdbc.driver"));
-			conn = DriverManager.getConnection(prop.getProperty("jdbc.url"), 
-					prop.getProperty("jdbc.username"), 
-					prop.getProperty("jdbc.password"));
-			
-			
-			/*Class.forName("oracle.jdbc.driver.OracleDriver");
-			conn = DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:XE", "scott", "TIGER");*/
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			conn = DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:XE", "scott", "TIGER");
 
+			if (conn != null) {
+				System.out.println("연결 완료");
+			} else {
+				System.out.println("연결 실패");
+			}
 
 			if (conn != null) {
 				System.out.println("연결 완료");
